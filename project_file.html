@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2c003e, #7b1fa2, #c60055);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background-color: #f158f6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            max-width: 1200px;
+            width: 90%;
+            margin-top: 20px;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .project {
+            background-color: #2a053e;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 18%;
+            text-align: center;
+        }
+
+        .project img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .github-link {
+            display: inline-block;
+            background-color: #7b1fa2;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .github-link:hover {
+            background-color: #f51cf9;
+        }
+
+        .review-btn {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #ff4081;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .review-btn:hover {
+            background-color: #c60055;
+        }
+
+        .review-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        .review-popup textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 5px;
+        }
+
+        .close-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #7b1fa2;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .download-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #4a0072;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .image-container {
+            width: 100%;  /* Make the container full width */
+            display: flex;
+            justify-content: center; /* Center the image */
+            align-items: center;
+            padding: 10px; /* Add some spacing */
+        }
+        
+        .image-container img {
+            width: 100%;  /* Make the image take full width */
+            max-width: 1200px; /* Set a max width for large screens */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: Add rounded corners */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Optional: Add a soft shadow */
+        }
+        .projects {
+    display: flex;
+    justify-content: center; /* Centers the projects horizontally */
+    gap: 20px; /* Space between projects */
+    flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+.project {
+    background-color: #4a0072;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 45%; /* Adjust width to fit in one row */
+}
+.projects {
+    display: flex;
+    justify-content: center; /* Centers the projects horizontally */
+    gap: 20px; /* Space between projects */
+    flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+.project {
+    background-color: #4a0072;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 250px;  /* Fixed width */
+    height: 250px; /* Fixed height to make it square */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.project img {
+    width: 80px; /* Smaller image for better fit */
+    height: 80px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.project h2 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.project p {
+    font-size: 12px;
+    margin: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.github-link {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-top: auto; /* Keeps button at the bottom */
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 style="text-align: center;">Project Showcase</h1>
+    <div class="projects">
+        <div class="project">
+            <img src="music_player.png" alt="Project 1 Screenshot">
+            <h2>audio_visulization</h2>
+            <p>An engaging and dynamic Audio Visualizer that transforms audio files into vibrant visual representations. With an intuitive interface, customizable volume, and real-time visual effects, this project is perfect for music enthusiasts and developers alike.</p>
+            <a href="https://github.com/Anu142004/audio_visulization" target="_blank" class="github-link">
+                View on GitHub
+            </a>
+        </div>
+        
+        <div class="project">
+            <img src="form.png" alt="Project 1 Screenshot">
+            <h2>survey_form</h2>
+            <p>About
+                An interactive Programmers Survey Form to gather insights from developers worldwide. Share preferences, experiences, and opinions on technologies, programming languages, and tools!</p>
+            <a href="https://github.com/Anu142004/survey_form" target="_blank" class="github-link">
+                View on GitHub
+            </a>
+        </div>
+        
+
+        <div class="project">
+            <img src="alumini_connect.png" alt="Project 1 Screenshot">
+            <h2>jss alumini connect</h2>
+            <p>It is an alumni connect in this app the juniors from JSSATEB can connect with their alumni's and to get their guide lines to shape our future more over what is more important is to learn from other experiences , do connect with jss alumni's to get more insights about what we do!</p>
+            <a href="https://jss-connect.vercel.app/" target="_blank" class="github-link">
+                View on GitHub
+            </a>
+        </div>
+        
+        
+        <div class="project">
+            <img src="wild_flower.png" alt="Project 1 Screenshot">
+            <h2>wild flower</h2>
+            <p> crafted with Wix Studio, is a seamless blend of beauty and functionality, designed to provide customers with an effortless flower shopping experience.</p>
+            <a href="https://ananyaevara.wixstudio.com/my-site-1" target="_blank" class="github-link">
+                View on GitHub
+            </a>
+        </div>
+
+      
+       
+     
+    </div>
+    
+    <div class="projects">
+        <div class="project">
+            <img src="plate.jpeg" alt="Plate Promise Screenshot">
+            <h2>Plate Promise</h2>
+            <p>PlatePromise is a food rescue platform dedicated to minimizing food waste and fighting hunger. We connect restaurants with surplus food to NGOs that serve communities in need—because every extra bite matters!</p>
+            <a href="https://shiny-paletas-bdc5d1.netlify.app/#about" target="_blank" class="github-link">View on GitHub</a>
+        </div>
+    
+        <div class="project">
+            <img src="FRAUDSHIELD.png" alt="FraudShield Screenshot">
+            <h2>FraudShield</h2>
+            <p>Credit card fraud is a major concern for both consumers and financial institutions. Fraudulent transactions can lead to financial losses and damage to the reputation of financial institutions.</p>
+            <a href="https://github.com/Anu142004/FRAUDSHIELD" target="_blank" class="github-link">View on GitHub</a>
+        </div>
+        <div class="project">
+            <img src="vidyamitra.png" alt=" Screenshot">
+            <h2>vidyamitra</h2>
+            <p>The Vidyamitra website serves as an educational platform designed to empower learners across various levels. It offers structured courses in English, Science, and Math, categorized into three levels: beginner, intermediate, and advanced. Each level focuses on foundational skills, gradually advancing to more complex topics. The platform aims to make learning accessible and engaging for all students</p>
+            <a href="https://vidyamitra.vercel.app/" target="_blank" class="github-link">View on GitHub</a>
+        </div>
+        <div class="project">
+            
+            <h2>Future_intern</h2>
+            <p></p>
+            <a href="https://github.com/Anu142004/future_intern/tree/main" target="_blank" class="github-link">View on GitHub</a>
+        </div>
+       
+    </div>
+    <div class="projects">
+        <div class="project">
+            
+            <h2>titanic survival analysis</h2>
+            <p></p>
+            <a href="https://github.com/Anu142004/python_projects/blob/main/analytics.pdf" target="_blank" class="github-link">View on GitHub</a>
+        </div>
+
+        <div class="project">
+            
+            <h2>customer sale prediction</h2>
+            <p>power BI</p>
+            <a href="https://github.com/Anu142004/power-bi/tree/main" target="_blank" class="github-link">View on GitHub</a>
+        </div>
+    </div>
+    
+    
+</div>
+
+<div class="container">
+    <h1 style="text-align: center;">CERTIFICATE</h1>
+    <div class="projects">
+        <div class="project">
+            
+            <h2>data science</h2>
+            <p></p>
+            <a href="data_science_infosys.pdf" target="_blank" class="github-link">
+                View it
+            </a>
+        </div>
+        <div class="project">
+            
+            <h2>data analytics</h2>
+            <p></p>
+            <a href="forge_accenture.pdf" target="_blank" class="github-link">
+                View it
+            </a>
+        </div>
+        <div class="project">
+            
+            <h2>Mango DB</h2>
+            <p></p>
+            <a href="mongo_db.pdf" target="_blank" class="github-link">
+                View it
+            </a>
+        </div>
+        <div class="project">
+            
+            <h2>natural language processing</h2>
+            <p></p>
+            <a href="natural_language_infosys.pdf" target="_blank" class="github-link">
+                View it
+            </a>
+        </div>
+        <div class="project">
+            
+            <h2>AWS_CLOUD </h2>
+            <p></p>
+            <a href="AWS_CLOUD Certificate.pdf" target="_blank" class="github-link">
+                View it
+            </a>
+        </div>
+</div>
+<div class="projects">
+    <div class="project">
+        <h2>cloud skills from google arcade </h2>
+            <p></p>
+            <a href="https://www.cloudskillsboost.google/public_profiles/ba12e934-10a4-4cff-9437-3a6bf9943109" target="_blank" class="github-link">
+                View it
+            </a>
+
+    </div>
+    <div class="project">
+            
+        <h2>developing the company website using WIX</h2>
+        <p></p>
+        <a href="coursera.pdf" target="_blank" class="github-link">
+            View it
+        </a>
+    </div>
+    <div class="project">
+            
+        <h2>virtual internship Delloite</h2>
+        <p></p>
+        <a href="delloite_certificate.pdf" target="_blank" class="github-link">
+            View it
+        </a>
+    </div>
+    <div class="project">
+            
+        <h2>cyber security</h2>
+        <p></p>
+        <a href="google_cyber.pdf" target="_blank" class="github-link">
+            View it
+        </a>
+    </div>
+    <div class="project">
+            
+        <h2>cloud computing</h2>
+        <p></p>
+        <a href="AWS Skill Builder Certificate.pdf" target="_blank" class="github-link">
+            View it
+        </a>
+    </div>
+</div>
+</div>
+<div class="image-container">
+    <img src="background.png" alt="Background Image">
+</div>
+
+<button class="review-btn" onclick="document.getElementById('review-popup').style.display='block'">Give Review</button>
+
+<div id="review-popup" class="review-popup">
+    <h2>any feedback</h2>
+    <textarea id="review-text" placeholder="Write your feedback here..."></textarea>
+    <br>
+    <button class="close-btn" onclick="document.getElementById('review-popup').style.display='none'">Close</button>
+    <button class="download-btn" onclick="saveReview()">Save Review</button>
+    <button class="download-btn" onclick="downloadCSV()">Download CSV</button>
+</div>
+
+<script>
+    let reviews = []; // Array to store reviews
+
+    function saveReview() {
+        let reviewText = document.getElementById("review-text").value;
+        if (reviewText.trim() === "") {
+            alert("Please enter a review before saving!");
+            return;
+        }
+
+        let timestamp = new Date().toLocaleString();
+        reviews.push({ timestamp, review: reviewText });
+
+        alert("Review saved! Click 'Download CSV' to export.");
+        document.getElementById("review-text").value = ""; // Clear input
+    }
+
+    function downloadCSV() {
+        if (reviews.length === 0) {
+            alert("No reviews to download!");
+            return;
+        }
+
+        let csvContent = "data:text/csv;charset=utf-8,Timestamp,Review\n";
+        reviews.forEach(row => {
+            csvContent += `${row.timestamp},"${row.review}"\n`;
+        });
+
+        let encodedUri = encodeURI(csvContent);
+        let link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "reviews.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
+
+</body>
+</html>

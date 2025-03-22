@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: white;
+        }
+        .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .container {
+            background: white;
+            color: black;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(208, 12, 234, 0.678);
+            width: 300%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #8a05d7;
+            color: rgb(255, 255, 255);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #9f03f9;
+        }
+        .spline-container {
+            width: 900px;
+            height: 700px;
+        }
+        
+    </style>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.72/build/spline-viewer.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="spline-container">
+            <spline-viewer url="https://prod.spline.design/gqKhzbZUitkC29cn/scene.splinecode"></spline-viewer>
+        </div>
+        <div class="container">
+            <h2>Contact me</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

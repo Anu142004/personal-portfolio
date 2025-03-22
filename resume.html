@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Page Layout */
+        body {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Left Side - Spline UI */
+        .left {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        spline-viewer {
+            width: 700px !important; /* Adjust UI size */
+            height: 700px !important;
+        }
+
+        /* Right Side - Resume Section */
+        .right {
+            flex: 1;
+            max-width: 450px; /* Keeps it well-sized */
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Download Button */
+        .download-btn {
+            display: inline-block;
+            padding: 14px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #ff4b2b, #ff416c);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Additional Sections */
+        .info-box {
+            background: rgba(5, 5, 5, 0.1);
+            padding: 18px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 50px;
+        }
+
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(183, 7, 242, 0.952);
+        }
+
+       
+    </style>
+</head>
+<body>
+
+    <!-- Left Side - 3D UI -->
+    <div class="left">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.72/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/Ei8k3VqvzPO9ckGr/scene.splinecode"></spline-viewer>
+    </div>
+
+    <!-- Right Side - Resume & Info -->
+    <div class="right">
+        <div class="container">
+            <h2>Download My Resume</h2>
+            <a href="certificate/resume (1).pdf" download="certificate/resume(1).pdf" class="download-btn">Download PDF</a>
+
+            <!-- Additional Sections -->
+            <div class="info-box">
+                <h3>About Me</h3>
+                <p>Passionate Computer Science Engineer, skilled in AI, networking, and web development.</p>
+            </div>
+            <div class="info-box">
+                <h3>Skills & Expertise</h3>
+                <p>Proficient in Java, Python, AI, and full-stack web development.</p>
+            </div>
+            <div class="info-box">
+                <h3>Contact Me</h3>
